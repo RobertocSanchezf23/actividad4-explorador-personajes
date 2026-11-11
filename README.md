@@ -163,7 +163,7 @@ Esta actividad nos permitió ver la diferencia entre una página con datos fijos
 
 Un aprendizaje importante fue que no todos los códigos de error significan lo mismo. Esta API responde **404** cuando ningún personaje coincide con la búsqueda; si no lo hubiéramos revisado en la documentación, la aplicación habría mostrado un error cuando en realidad se trataba de un resultado vacío. También notamos que, si el usuario escribe rápido, pueden llegar respuestas en desorden, y lo resolvimos esperando a que termine de escribir y cancelando la petición anterior con `AbortController`.
 
-Separar el código en archivos con una responsabilidad cada uno (textos, API, interfaz y eventos) hizo más fácil organizar los commits, encontrar errores y preparar la versión en inglés, ya que todos los textos están en un solo archivo. Por último, publicar el proyecto en GitHub Pages nos mostró lo sencillo que es poner una aplicación en línea y compartirla mediante una URL pública.
+Separar el código en archivos con una responsabilidad cada uno (textos, API, interfaz y eventos) hizo más fácil organizar los commits y encontrar errores. Por último, publicar el proyecto en GitHub Pages nos mostró lo sencillo que es poner una aplicación en línea y compartirla mediante una URL pública.
 
 ## Tecnologías
 
@@ -171,4 +171,4 @@ HTML5 · CSS3 · JavaScript ES6+ · Fetch API · JSON · Git · GitHub · GitHub
 
 ---
 
-Datos proporcionados por [The Rick and Morty API](https://rickandmortyapi.com). Proyecto con fines educativos.
+Datos proporcionados por [The Rick and Morty API](https://rickandmortyapi.com). 
