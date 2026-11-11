@@ -1,0 +1,354 @@
+/* ---------- Variables de diseño ---------- */
+:root {
+  --fondo: #0f1419;
+  --superficie: #1a2129;
+  --superficie-2: #232c36;
+  --borde: #2e3945;
+  --texto: #e8edf2;
+  --texto-suave: #9aa8b6;
+  --acento: #97ce4c;
+  --acento-oscuro: #6fa82e;
+  --vivo: #55cc44;
+  --muerto: #e5534b;
+  --desconocido: #9aa8b6;
+  --radio: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+  background: linear-gradient(180deg, #16301a 0%, var(--fondo) 100%);
+}
+
+.encabezado h1 {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  color: var(--acento);
+  letter-spacing: -0.5px;
+}
+
+.encabezado p {
+  color: var(--texto-suave);
+  margin-top: 0.3rem;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+  flex: 1;
+}
+
+/* ---------- Controles ---------- */
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1 1 150px;
+}
+
+.campo-busqueda {
+  flex: 3 1 250px;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+input,
+select {
+  font: inherit;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--borde);
+  background: var(--superficie-2);
+  color: var(--texto);
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 2px;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--acento);
+  color: #0f1419;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.boton:hover:not(:disabled) {
+  background: var(--acento-oscuro);
+}
+
+.boton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.boton-secundario {
+  background: transparent;
+  color: var(--texto);
+  border: 1px solid var(--borde);
+}
+
+.boton-secundario:hover:not(:disabled) {
+  background: var(--superficie-2);
+}
+
+.resumen {
+  color: var(--texto-suave);
+  margin-bottom: 1rem;
+  min-height: 1.5em;
+}
+
+/* ---------- Mensajes de estado ---------- */
+.mensaje {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.mensaje[hidden] {
+  display: none;
+}
+
+.mensaje h2 {
+  font-size: 1.3rem;
+}
+
+.mensaje p {
+  color: var(--texto-suave);
+}
+
+.mensaje-icono {
+  font-size: 2.5rem;
+}
+
+.mensaje-error {
+  border-color: var(--muerto);
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid var(--borde);
+  border-top-color: var(--acento);
+  border-radius: 50%;
+  animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Tarjetas ---------- */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.tarjeta {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  border-color: var(--acento);
+}
+
+.tarjeta-boton {
+  all: unset;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.tarjeta-imagen {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  background: var(--superficie-2);
+}
+
+.tarjeta-cuerpo {
+  padding: 0.8rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-items: flex-start;
+}
+
+.tarjeta-nombre {
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.tarjeta-dato {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+/* Etiqueta de estado con puntito de color */
+.estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--superficie-2);
+}
+
+.estado::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--desconocido);
+}
+
+.estado-alive::before { background: var(--vivo); }
+.estado-dead::before { background: var(--muerto); }
+
+/* ---------- Paginación ---------- */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.paginacion[hidden] {
+  display: none;
+}
+
+#pagina-actual {
+  color: var(--texto-suave);
+}
+
+/* ---------- Ventana de detalle ---------- */
+.detalle {
+  margin: auto;
+  width: min(420px, calc(100% - 2rem));
+  max-height: calc(100vh - 2rem);
+  background: var(--superficie);
+  color: var(--texto);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+}
+
+.detalle::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#detalle-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.detalle-imagen {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid var(--acento);
+}
+
+.detalle-datos {
+  width: 100%;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+.detalle-datos dt {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  margin-top: 0.6rem;
+}
+
+.detalle .boton {
+  width: 100%;
+}
+
+/* ---------- Pie ---------- */
+.pie {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--borde);
+}
+
+/* ---------- Celulares ---------- */
+@media (max-width: 480px) {
+  .tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .tarjeta-cuerpo {
+    padding: 0.6rem;
+  }
+
+  .tarjeta-nombre {
+    font-size: 0.95rem;
+  }
+}
