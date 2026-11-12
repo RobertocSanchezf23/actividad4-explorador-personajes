@@ -136,26 +136,26 @@ Después abrir `index.html` en el navegador. Se necesita conexión a internet, p
 
 ## Capturas
 
-**Pantalla principal**
 ![Pantalla principal](capturas/principal.png)
+*Figura 1. Pantalla principal de la aplicación con los primeros 20 personajes obtenidos de la API.*
 
-**Búsqueda y filtro** (nombre "morty", estado "Vivo")
 ![Búsqueda y filtro](capturas/busqueda.png)
+*Figura 2. Búsqueda por nombre ("morty") combinada con el filtro de estado "Vivo".*
 
-**Ficha de detalle**
 ![Ficha de detalle](capturas/detalle.png)
+*Figura 3. Ficha de detalle que se abre al seleccionar un personaje.*
 
-**Estado de carga**
-![Estado de carga](capturas/cargando.png)
-
-**Resultado vacío**
 ![Resultado vacío](capturas/vacio.png)
+*Figura 4. Mensaje de resultado vacío cuando ningún personaje coincide con la búsqueda (respuesta 404 de la API).*
 
-**Manejo de errores** (sin conexión)
+![Estado de carga](capturas/cargando.png)
+*Figura 5. Estado de carga mientras se espera la respuesta de la API (conexión lenta simulada con DevTools).*
+
 ![Manejo de errores](capturas/error.png)
+*Figura 6. Mensaje de error y botón "Reintentar" ante la falta de conexión (simulada con DevTools).*
 
-**Historial de commits**
 ![Historial de commits](capturas/commits.png)
+*Figura 7. Historial de commits del proyecto en Git.*
 
 ## Reflexión técnica
 
@@ -171,4 +171,4 @@ HTML5 · CSS3 · JavaScript ES6+ · Fetch API · JSON · Git · GitHub · GitHub
 
 ---
 
-Datos proporcionados por [The Rick and Morty API](https://rickandmortyapi.com). 
+Datos proporcionados por [The Rick and Morty API](https://rickandmortyapi.com). Proyecto con fines educativos.
