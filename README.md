@@ -171,4 +171,4 @@ HTML5 · CSS3 · JavaScript ES6+ · Fetch API · JSON · Git · GitHub · GitHub
 
 ---
 
-Datos proporcionados por [The Rick and Morty API](https://rickandmortyapi.com). Proyecto con fines educativos.
+Datos proporcionados por [The Rick and Morty API](https://rickandmortyapi.com). 
